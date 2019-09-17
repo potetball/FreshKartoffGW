@@ -27,6 +27,7 @@ byte destination = 0xFF;  // destination to send to
 long lastSendTime = 0;    // last send time
 int interval = 5000;      // interval between sends
 boolean connected = false; //Connected state
+
 // WiFi network name and password:
 const char *networkName = "Tyldum.NET";
 const char *networkPswd = "kartoffel";
@@ -84,6 +85,7 @@ void sendMessage(String outgoing)
   msgCount++;                    // increment message ID
 }
 
+// Callback from LoraWAN
 void onReceive(int packetSize)
 {
   if (packetSize == 0)
